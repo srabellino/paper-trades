@@ -70,7 +70,7 @@ class OptionTradingBot:
             try:
                 delta_diff = abs(abs(snapshot['greeks']['delta']) - target_delta)
             except Exception as e:
-                logging.warning(f'No greeks for contract {key}')
+                logging.warning(f'No greeks for contract {key}: {e}')
                 continue
             if delta_diff < last_delta_dif:
                 last_delta_dif = delta_diff
